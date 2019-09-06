@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.0.4",
+    "@tensorflow/tfjs-converter": "^1.2.9",
+    "@tensorflow/tfjs-core": "^1.2.9",
+    "bootstrap": "^4.3.1",
     "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "react-vega": "^6.1.0",
+    "react-vega-lite": "^6.1.0",
+    "vega": "^5.5.3",
+    "vega-lib": "^4.4.0",
+    "vega-lite": "^4.0.0-beta.1"
   },
   "scripts": {
     "start": "react-scripts start",
