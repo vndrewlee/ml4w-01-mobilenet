@@ -51,8 +51,10 @@ function App() {
           <h1>Image Classification Demo</h1>
         <hr/>
         <Row>
-          <Col><video id="videoPlayer" ref={videoEl} height={250}/></Col>
-          <Col><VegaLite spec={vegaLiteSpec} data={{"values": predictions}} /></Col>
+          <Col>
+            <video id="videoPlayer" ref={videoEl} height={250} autoplay playsinline/> 
+            <VegaLite spec={vegaLiteSpec} data={{"values": predictions}} />
+          </Col>
         </Row>
         <hr/>
         {model ? <p>Using Tensorflow.js pretrained <a href="https://github.com/tensorflow/tfjs-models/tree/master/mobilenet">MobileNet model</a></p>: <p>loading model...</p>}
