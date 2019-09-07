@@ -4,7 +4,6 @@ import VegaLite from 'react-vega-lite';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
@@ -21,6 +20,7 @@ function App() {
       .then(stream => {
         let video = videoEl.current;
         video.srcObject = stream;
+        window.stream = stream;
         video.play();
       });
     };
@@ -46,17 +46,17 @@ function App() {
   return (
     <div className="App">
       <Container>
+        <Col>
         <hr/>
-          <h1>Image Classification Demo</h1>
+          <h2>MobileNet Classification</h2>
         <hr/>
-        <Row>
-          <Col>
-            <video id="videoPlayer" autoPlay muted playsInline ref={videoEl} height={250} /> 
-            <VegaLite spec={vegaLiteSpec} data={{"values": predictions}} />
-          </Col>
-        </Row>
+          <video id="videoPlayer" autoPlay muted playsInline ref={videoEl} width={350} /> 
+          <br/>
+          <VegaLite spec={vegaLiteSpec} data={{"values": predictions}} />
         <hr/>
         {model ? <p>Using Tensorflow.js pretrained <a href="https://github.com/tensorflow/tfjs-models/tree/master/mobilenet">MobileNet model</a></p>: <p>loading model...</p>}
+        <a href="https://vndrewlee.com/posts/itp/03_semester/ml4w/01_mobilenet/">vndrewlee.com</a>
+        </Col>
       </Container>
     </div>
   );
@@ -65,7 +65,7 @@ function App() {
 
 const vegaLiteSpec = {
   usermeta: {embedOptions: {actions: false}},
-  width: 200,
+  width: 250,
   autosize: {type: "none", contains: "content"},
   padding: {left:100, right:10, bottom:50, top:5},
   mark: "bar",
