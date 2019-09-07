@@ -52,7 +52,7 @@ function App() {
         <hr/>
         <Row>
           <Col>
-            <video id="videoPlayer" ref={videoEl} height={250} autoplay playsinline/> 
+            <video id="videoPlayer" autoPlay muted playsInline ref={videoEl} height={250} /> 
             <VegaLite spec={vegaLiteSpec} data={{"values": predictions}} />
           </Col>
         </Row>
