@@ -17,10 +17,11 @@ function App() {
 
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({video:{facingMode: 'environment'}})
+      navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode: 'environment'}})
       .then(stream => {
         let video = videoEl.current;
         video.srcObject = stream;
+        window.stream = stream;
         video.play();
       });
     };
