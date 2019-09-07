@@ -21,7 +21,6 @@ function App() {
       .then(stream => {
         let video = videoEl.current;
         video.srcObject = stream;
-        window.stream = stream;
         video.play();
       });
     };
@@ -66,8 +65,7 @@ function App() {
 
 const vegaLiteSpec = {
   usermeta: {embedOptions: {actions: false}},
-  width: 400,
-  height:200,
+  width: 200,
   autosize: {type: "none", contains: "content"},
   padding: {left:100, right:10, bottom:50, top:5},
   mark: "bar",
